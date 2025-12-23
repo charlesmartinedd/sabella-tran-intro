@@ -681,7 +681,59 @@
             text-decoration: none;
         }
 
-        /* Responsive */
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Stagger delays for list items */
+        .fade-in:nth-child(1) { transition-delay: 0s; }
+        .fade-in:nth-child(2) { transition-delay: 0.1s; }
+        .fade-in:nth-child(3) { transition-delay: 0.2s; }
+        .fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+/* Responsive */
         @media (max-width: 992px) {
             .hero-grid,
             .section-grid {
@@ -756,13 +808,13 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-grid">
-            <div class="hero-content">
+            <div class="hero-content fade-in">
                 <h1>Sabella Tran</h1>
                 <p class="pronunciation">/suh-BEL-uh/</p>
                 <p class="hero-role">Training Coordinator</p>
                 <p class="hero-dept">Division of Population & Behavioral Health</p>
             </div>
-            <div class="hero-image-container">
+            <div class="hero-image-container scale-in">
                 <img src="assets/graduation.jpg" alt="Sabella at UCLA graduation">
                 <div class="hero-image-overlay"></div>
             </div>
@@ -778,7 +830,7 @@
     <!-- Why UCLA Health -->
     <section id="why-ucla" class="content-section">
         <div class="section-grid">
-            <div class="section-text">
+            <div class="section-text fade-in-left">
                 <span class="section-label">Why UCLA Health</span>
                 <h2>Drawn by <span>Community</span></h2>
                 <p>UCLA Health's commitment to serving a diverse community matched the work Sabella had been doing for the past two years. She saw the resources, knowledge, and connections needed to improve access and equity across Los Angeles.</p>
@@ -788,7 +840,7 @@
                     <li>Collaboration that drives meaningful impact</li>
                 </ul>
             </div>
-            <div class="section-image">
+            <div class="section-image fade-in-right">
                 <img src="assets/team-cover.jpg" alt="Sabella with UCLA colleagues">
             </div>
         </div>
@@ -803,7 +855,7 @@
     <!-- Professional Journey -->
     <section id="journey" class="content-section">
         <div class="section-grid reverse">
-            <div class="section-text">
+            <div class="section-text fade-in-left">
                 <span class="section-label">Professional Journey</span>
                 <h2>From <span>Dream School</span> to Impact</h2>
                 <p>Sabella's path through public health has always centered on community. From her undergraduate work at UC Irvine to achieving her dream of attending UCLA for her MPH, every step has been guided by a passion for underserved populations.</p>
@@ -814,7 +866,7 @@
                     <li>Student-run free clinics serving underserved communities</li>
                 </ul>
             </div>
-            <div class="logo-showcase">
+            <div class="logo-showcase scale-in">
                 <div class="logo-row">
                     <div class="logo-item">
                         <img src="assets/ucla-campus-logo.png" alt="UCLA">
@@ -844,7 +896,7 @@
     <!-- Green Thumb -->
     <section id="green-thumb" class="content-section">
         <div class="section-grid">
-            <div class="section-text">
+            <div class="section-text fade-in-left">
                 <span class="section-label">A Surprising Skill</span>
                 <h2>A <span>Green Thumb</span> & Thoughtful Gifts</h2>
                 <p>In Sabella's culture, gifting fruits is a meaningful tradition. Her family grows exotic fruits like dragonfruit, soursop, and water apple. While she admits she's "a terrible gift giver," she's found her own way to share love&mdash;handmade flower bouquets.</p>
@@ -854,11 +906,11 @@
                     <li>Gift-giving rooted in cultural connection</li>
                 </ul>
             </div>
-            <div class="image-duo">
-                <div class="section-image">
+            <div class="image-duo fade-in-right">
+                <div class="section-image fade-in-right">
                     <img src="assets/flowers.jpg" alt="Handmade flower bouquet">
                 </div>
-                <div class="section-image">
+                <div class="section-image fade-in-right">
                     <img src="assets/dragonfruit.jpg" alt="Dragonfruit plants">
                 </div>
             </div>
@@ -874,7 +926,7 @@
     <!-- Cats Section -->
     <section id="cats" class="content-section cats-story">
         <div class="section-grid reverse">
-            <div class="section-text">
+            <div class="section-text fade-in-left">
                 <span class="section-label">What Energizes Her</span>
                 <h2>A <span>Cat-Obsessed</span> Heart</h2>
                 <p>In 2020, Sabella started fostering cats to fill her time at home. Then in 2022, fate intervened&mdash;two tiny kittens in a cardboard box at Home Depot. Three years later, they're still her constant companions.</p>
@@ -885,12 +937,12 @@
                     <li>"Cats over dogs, always"</li>
                 </ul>
             </div>
-            <div class="image-duo">
-                <div class="section-image">
+            <div class="image-duo fade-in-right">
+                <div class="section-image fade-in-right">
                     <span class="story-label">Then (2022)</span>
                     <img src="assets/cats-kittens.jpg" alt="The kittens when first rescued">
                 </div>
-                <div class="section-image">
+                <div class="section-image fade-in-right">
                     <span class="story-label">Now (2025)</span>
                     <img src="assets/cats-grown.jpg" alt="The cats all grown up">
                 </div>
@@ -906,7 +958,7 @@
 
     <!-- Healthcare Vision -->
     <section id="vision" class="quote-section">
-        <div class="quote-content">
+        <div class="quote-content fade-in">
             <span class="section-label">Healthcare Vision</span>
             <div class="quote-image">
                 <img src="assets/public-health-vision.jpg" alt="Public health professionals collaborating">
@@ -926,7 +978,7 @@
 
     <!-- Welcome Section -->
     <section id="welcome">
-        <div class="welcome-content">
+        <div class="welcome-content fade-in">
             <span class="section-label">Looking Forward</span>
             <h2>Welcome to the <span>Team</span>, Sabella!</h2>
             <p style="font-size: 1.2rem; color: var(--gray-200); max-width: 600px; margin: 0 auto;">What she's excited to bring to DPBH:</p>
@@ -967,6 +1019,27 @@
                 hero.style.backgroundPositionY = scrolled * 0.3 + 'px';
             }
         });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
     </script>
 </body>
 </html>
