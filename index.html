@@ -226,7 +226,20 @@
             position: relative;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(147, 112, 219, 0.4);
+            box-shadow:
+                0 0 20px rgba(255, 182, 193, 0.3),
+                0 0 40px rgba(147, 112, 219, 0.2),
+                0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image-container:hover {
+            border-color: rgba(255, 182, 193, 0.6);
+            box-shadow:
+                0 0 30px rgba(255, 182, 193, 0.4),
+                0 0 60px rgba(147, 112, 219, 0.3),
+                0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .hero-image-container img {
@@ -318,7 +331,20 @@
         .section-image {
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(147, 112, 219, 0.4);
+            box-shadow:
+                0 0 20px rgba(255, 182, 193, 0.3),
+                0 0 40px rgba(147, 112, 219, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .section-image:hover {
+            border-color: rgba(255, 182, 193, 0.6);
+            box-shadow:
+                0 0 30px rgba(255, 182, 193, 0.4),
+                0 0 60px rgba(147, 112, 219, 0.3),
+                0 25px 50px rgba(0, 0, 0, 0.4);
         }
 
         .section-image img {
@@ -347,6 +373,73 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Logo Showcase */
+        .logo-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 3px solid rgba(147, 112, 219, 0.4);
+            box-shadow:
+                0 0 20px rgba(255, 182, 193, 0.3),
+                0 0 40px rgba(147, 112, 219, 0.2),
+                0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo-showcase:hover {
+            border-color: rgba(255, 182, 193, 0.6);
+            box-shadow:
+                0 0 30px rgba(255, 182, 193, 0.4),
+                0 0 60px rgba(147, 112, 219, 0.3),
+                0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .logo-item img {
+            height: 80px;
+            width: auto;
+            max-width: 160px;
+            object-fit: contain;
+            filter: brightness(1.1);
+        }
+
+        .logo-item.seal img {
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .logo-item span {
+            font-size: 0.9rem;
+            color: var(--gray-200);
+            font-weight: 500;
+            text-align: center;
         }
 
         /* Quote Section */
@@ -382,7 +475,20 @@
             margin: 0 auto 3rem;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(147, 112, 219, 0.4);
+            box-shadow:
+                0 0 20px rgba(255, 182, 193, 0.3),
+                0 0 40px rgba(147, 112, 219, 0.2),
+                0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .quote-image:hover {
+            border-color: rgba(255, 182, 193, 0.6);
+            box-shadow:
+                0 0 30px rgba(255, 182, 193, 0.4),
+                0 0 60px rgba(147, 112, 219, 0.3),
+                0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .quote-image img {
@@ -430,20 +536,6 @@
 
         .cats-story .section-image {
             aspect-ratio: 1/1;
-            border: 3px solid rgba(147, 112, 219, 0.4);
-            box-shadow:
-                0 0 20px rgba(255, 182, 193, 0.3),
-                0 0 40px rgba(147, 112, 219, 0.2),
-                0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .cats-story .section-image:hover {
-            border-color: rgba(255, 182, 193, 0.6);
-            box-shadow:
-                0 0 30px rgba(255, 182, 193, 0.4),
-                0 0 60px rgba(147, 112, 219, 0.3),
-                0 25px 50px rgba(0, 0, 0, 0.4);
         }
 
         .story-label {
@@ -592,6 +684,11 @@
             .welcome-list {
                 grid-template-columns: 1fr;
             }
+
+            .logo-row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -642,7 +739,7 @@
                 <p class="hero-dept">Division of Population & Behavioral Health</p>
             </div>
             <div class="hero-image-container">
-                <img src="assets/team-cover.jpg" alt="Sabella with UCLA colleagues">
+                <img src="assets/graduation.jpg" alt="Sabella at UCLA graduation">
                 <div class="hero-image-overlay"></div>
             </div>
         </div>
@@ -668,7 +765,7 @@
                 </ul>
             </div>
             <div class="section-image">
-                <img src="assets/graduation.jpg" alt="Sabella at UCLA graduation">
+                <img src="assets/team-cover.jpg" alt="Sabella with UCLA colleagues">
             </div>
         </div>
         <a href="#journey" class="scroll-arrow">
@@ -693,8 +790,23 @@
                     <li>Student-run free clinics serving underserved communities</li>
                 </ul>
             </div>
-            <div class="section-image">
-                <img src="assets/graduation.jpg" alt="Sabella's UCLA graduation">
+            <div class="logo-showcase">
+                <div class="logo-row">
+                    <div class="logo-item">
+                        <img src="assets/ucla-campus-logo.png" alt="UCLA">
+                        <span>UCLA</span>
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/oc-logo.png" alt="UC Irvine">
+                        <span>UC Irvine</span>
+                    </div>
+                </div>
+                <div class="logo-row">
+                    <div class="logo-item seal">
+                        <img src="assets/orange-county-seal.png" alt="Orange County">
+                        <span>Orange County</span>
+                    </div>
+                </div>
             </div>
         </div>
         <a href="#green-thumb" class="scroll-arrow">
