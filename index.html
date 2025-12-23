@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Sabella Tran | UCLA Health</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a365d;
+            --navy-light: #2a4a7f;
+            --navy-dark: #0f2744;
+            --ucla-blue: #2774AE;
+            --ucla-gold: #FFD100;
+            --light-blue: #87CEEB;
+            --soft-pink: #FFB6C1;
+            --lavender: #E6E6FA;
+            --purple: #9370DB;
+            --white: #FFFFFF;
+            --gray-100: #F8F9FA;
+            --gray-200: #E9ECEF;
+            --gray-400: #ADB5BD;
+            --gray-600: #6C757D;
+            --gradient-hero: linear-gradient(135deg, #1a365d 0%, #2a4a7f 50%, #2774AE 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(135, 206, 235, 0.1) 0%, rgba(147, 112, 219, 0.1) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(135, 206, 235, 0.15);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ucla-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .divider {
+            height: 24px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .dept-name {
+            font-size: 0.75rem;
+            color: var(--gray-200);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--gray-200);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--light-blue);
+        }
+
+        /* Section Base */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--light-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Scroll Arrow */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--gray-400);
+            transition: all 0.3s;
+        }
+
+        .scroll-arrow:hover {
+            color: var(--ucla-gold);
+        }
+
+        .scroll-arrow span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .scroll-arrow svg {
+            width: 24px;
+            height: 24px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(8px); }
+            60% { transform: translateY(4px); }
+        }
+
+        /* Hero Section */
+        #hero {
+            background: var(--gradient-hero);
+            position: relative;
+            padding-top: 8rem;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(147, 112, 219, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(135, 206, 235, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .pronunciation {
+            font-size: 1.1rem;
+            color: var(--light-blue);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-role {
+            font-size: 1.5rem;
+            color: var(--ucla-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-dept {
+            font-size: 1rem;
+            color: var(--gray-200);
+            font-weight: 400;
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(26, 54, 93, 0.8) 0%, transparent 100%);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--navy-dark);
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--navy);
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-grid.reverse {
+            direction: rtl;
+        }
+
+        .section-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .section-text h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .section-text h2 span {
+            color: var(--ucla-gold);
+        }
+
+        .section-text p {
+            font-size: 1.1rem;
+            color: var(--gray-200);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--gray-200);
+        }
+
+        .highlight-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .section-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .section-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Two Image Layout */
+        .image-duo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .image-duo .section-image {
+            aspect-ratio: 4/5;
+        }
+
+        .image-duo .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+            text-align: center;
+            padding: 8rem 3rem;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(255, 182, 193, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(135, 206, 235, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .quote-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .quote-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        blockquote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--white);
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        blockquote::before {
+            content: '"';
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            font-size: 6rem;
+            color: var(--purple);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .quote-attribution {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: var(--light-blue);
+        }
+
+        /* Cats Section Special */
+        .cats-story {
+            background: var(--navy);
+        }
+
+        .cats-story .image-duo {
+            gap: 2rem;
+        }
+
+        .cats-story .section-image {
+            aspect-ratio: 1/1;
+            border: 3px solid rgba(255, 182, 193, 0.2);
+        }
+
+        .story-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--soft-pink);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Final Section */
+        #welcome {
+            background: var(--gradient-hero);
+            text-align: center;
+        }
+
+        #welcome::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(255, 209, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .welcome-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-content h2 span {
+            color: var(--ucla-gold);
+        }
+
+        .welcome-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .welcome-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(135, 206, 235, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .welcome-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(135, 206, 235, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .welcome-item h3 {
+            font-size: 1.1rem;
+            color: var(--light-blue);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .welcome-item p {
+            font-size: 0.95rem;
+            color: var(--gray-200);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1rem 2.5rem;
+            background: var(--ucla-gold);
+            color: var(--navy-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 209, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            padding: 2rem 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(135, 206, 235, 0.1);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        footer a {
+            color: var(--light-blue);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid,
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .section-grid.reverse {
+                direction: ltr;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .section-text h2 {
+                font-size: 2rem;
+            }
+
+            blockquote {
+                font-size: 1.5rem;
+            }
+
+            .welcome-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .image-duo {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/ucla-health-logo.png" alt="UCLA Health" class="ucla-logo">
+            <div class="divider"></div>
+            <span class="dept-name">Division of Population & Behavioral Health</span>
+        </div>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#why-ucla">Why UCLA</a>
+            <a href="#journey">Journey</a>
+            <a href="#welcome">Welcome</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>Sabella Tran</h1>
+                <p class="pronunciation">/suh-BEL-uh/</p>
+                <p class="hero-role">Training Coordinator</p>
+                <p class="hero-dept">Division of Population & Behavioral Health</p>
+            </div>
+            <div class="hero-image-container">
+                <img src="assets/team-cover.jpg" alt="Sabella with UCLA colleagues">
+                <div class="hero-image-overlay"></div>
+            </div>
+        </div>
+        <a href="#why-ucla" class="scroll-arrow">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Why UCLA Health -->
+    <section id="why-ucla" class="content-section">
+        <div class="section-grid">
+            <div class="section-text">
+                <span class="section-label">Why UCLA Health</span>
+                <h2>Drawn by <span>Community</span></h2>
+                <p>UCLA Health's commitment to serving a diverse community matched the work Sabella had been doing for the past two years. She saw the resources, knowledge, and connections needed to improve access and equity across Los Angeles.</p>
+                <ul class="highlight-list">
+                    <li>Interdisciplinary team with diverse professional backgrounds</li>
+                    <li>Opportunity to learn and grow every day</li>
+                    <li>Collaboration that drives meaningful impact</li>
+                </ul>
+            </div>
+            <div class="section-image">
+                <img src="assets/graduation.jpg" alt="Sabella at UCLA graduation">
+            </div>
+        </div>
+        <a href="#journey" class="scroll-arrow">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Professional Journey -->
+    <section id="journey" class="content-section">
+        <div class="section-grid reverse">
+            <div class="section-text">
+                <span class="section-label">Professional Journey</span>
+                <h2>From <span>Dream School</span> to Impact</h2>
+                <p>Sabella's path through public health has always centered on community. From her undergraduate work at UC Irvine to achieving her dream of attending UCLA for her MPH, every step has been guided by a passion for underserved populations.</p>
+                <ul class="highlight-list">
+                    <li>BS Public Health Sciences, UC Irvine</li>
+                    <li>MPH Community Health Sciences, UCLA</li>
+                    <li>Clinical experience at ENT clinic & CVS pharmacy</li>
+                    <li>Student-run free clinics serving underserved communities</li>
+                </ul>
+            </div>
+            <div class="section-image">
+                <img src="assets/graduation.jpg" alt="Sabella's UCLA graduation">
+            </div>
+        </div>
+        <a href="#green-thumb" class="scroll-arrow">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Green Thumb -->
+    <section id="green-thumb" class="content-section">
+        <div class="section-grid">
+            <div class="section-text">
+                <span class="section-label">A Surprising Skill</span>
+                <h2>A <span>Green Thumb</span> & Thoughtful Gifts</h2>
+                <p>In Sabella's culture, gifting fruits is a meaningful tradition. Her family grows exotic fruits like dragonfruit, soursop, and water apple. While she admits she's "a terrible gift giver," she's found her own way to share love&mdash;handmade flower bouquets.</p>
+                <ul class="highlight-list">
+                    <li>Family tradition of growing exotic fruits</li>
+                    <li>Creates beautiful homemade flower arrangements</li>
+                    <li>Gift-giving rooted in cultural connection</li>
+                </ul>
+            </div>
+            <div class="image-duo">
+                <div class="section-image">
+                    <img src="assets/flowers.jpg" alt="Handmade flower bouquet">
+                </div>
+                <div class="section-image">
+                    <img src="assets/dragonfruit.jpg" alt="Dragonfruit plants">
+                </div>
+            </div>
+        </div>
+        <a href="#cats" class="scroll-arrow">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Cats Section -->
+    <section id="cats" class="content-section cats-story">
+        <div class="section-grid reverse">
+            <div class="section-text">
+                <span class="section-label">What Energizes Her</span>
+                <h2>A <span>Cat-Obsessed</span> Heart</h2>
+                <p>In 2020, Sabella started fostering cats to fill her time at home. Then in 2022, fate intervened&mdash;two tiny kittens in a cardboard box at Home Depot. Three years later, they're still her constant companions.</p>
+                <ul class="highlight-list">
+                    <li>Started fostering cats in 2020</li>
+                    <li>Adopted two Home Depot rescue kittens in 2022</li>
+                    <li>Volunteered at LA cat shelter to stay connected</li>
+                    <li>"Cats over dogs, always"</li>
+                </ul>
+            </div>
+            <div class="image-duo">
+                <div class="section-image">
+                    <span class="story-label">Then (2022)</span>
+                    <img src="assets/cats-kittens.jpg" alt="The kittens when first rescued">
+                </div>
+                <div class="section-image">
+                    <span class="story-label">Now (2025)</span>
+                    <img src="assets/cats-grown.jpg" alt="The cats all grown up">
+                </div>
+            </div>
+        </div>
+        <a href="#vision" class="scroll-arrow">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Healthcare Vision -->
+    <section id="vision" class="quote-section">
+        <div class="quote-content">
+            <span class="section-label">Healthcare Vision</span>
+            <div class="quote-image">
+                <img src="assets/public-health-vision.jpg" alt="Public health professionals collaborating">
+            </div>
+            <blockquote>
+                I'd invest more in the public health workforce. Public health often feels overlooked because it focuses on prevention&mdash;people don't notice until there's a crisis. When public health professionals are empowered and valued, they create lasting, meaningful impact.
+            </blockquote>
+            <p class="quote-attribution">&mdash; Sabella Tran</p>
+        </div>
+        <a href="#welcome" class="scroll-arrow">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome">
+        <div class="welcome-content">
+            <span class="section-label">Looking Forward</span>
+            <h2>Welcome to the <span>Team</span>, Sabella!</h2>
+            <p style="font-size: 1.2rem; color: var(--gray-200); max-width: 600px; margin: 0 auto;">What she's excited to bring to DPBH:</p>
+
+            <div class="welcome-list">
+                <div class="welcome-item">
+                    <h3>Curiosity</h3>
+                    <p>Eager to explore the many programs within DPBH and contribute fresh perspectives</p>
+                </div>
+                <div class="welcome-item">
+                    <h3>Creative Thinking</h3>
+                    <p>Bringing innovative approaches to health education and community engagement</p>
+                </div>
+                <div class="welcome-item">
+                    <h3>Collaboration</h3>
+                    <p>Thrives in environments that encourage teamwork and shared learning</p>
+                </div>
+                <div class="welcome-item">
+                    <h3>Community Impact</h3>
+                    <p>Committed to supporting work that makes real difference across LA</p>
+                </div>
+            </div>
+
+            <a href="#hero" class="cta-button">Back to Top</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>UCLA Health &bull; Division of Population & Behavioral Health &bull; <a href="https://www.uclahealth.org">uclahealth.org</a></p>
+    </footer>
+
+    <script>
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add subtle parallax to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.3 + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
