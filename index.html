@@ -552,14 +552,21 @@
         }
 
         .cats-story .image-duo {
-            gap: 5rem;
+            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
         }
 
         .cats-story .section-image {
             aspect-ratio: 1/1;
-            transform: scale(1.6);
-            margin-top: -3rem;
-            transform-origin: center center;
+            overflow: visible;
+            min-height: 400px;
+        }
+
+        .cats-story .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
 
         .story-label {
